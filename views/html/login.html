@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="loginBody">
+        <form id="form1" action="/signup" method="post">
+            <input id="fNameSettings" type="text" name="firstname" placeholder="First" class="boxSettings">
+            <input id="username" type="text" name="username" placeholder="Username" class="boxSettings">
+            <input id="email" type="email" name="email" placeholder="Email" class="boxSettings">
+            <input id="password" type="password" name="password1" placeholder="Password" class="boxSettings">
+            <button id="btnLoginSignUp" type="submit" value="Submit" class="btnStyle">SIGN UP</button>
+            <p id="or" class="underButtonText">or</p>
+            <p id="signIn" class="underButtonText">sign in</p>
+        </form>
+        <form id="form2" action='/signin ' , method='post'>
+            <input id="usernameSignIn" type="text" name="username" placeholder="Username" class="boxSettings">
+            <input id="passwordSignIn" type="password" name="password" placeholder="Password" class="boxSettings">
+            <button id="btnLoginSignIn" type="submit" value="Submit" class="btnStyle">SIGN IN</button>
+            <p id="orSignUp" class="underButtonText">or</p>
+            <p id="signUp" class="underButtonText">sign up</p>
+        </form>
+    </div>
+</body>
+</html>

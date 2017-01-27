@@ -1,0 +1,84 @@
+﻿body
+{
+    padding: 0;
+    margin: 0
+}
+
+#pageWrapper{
+    padding: 0;
+    width: 1060px;
+    margin: 0 auto;
+}
+
+#header{
+    background-color: #7289DA;
+    width: 100%;
+    height: 72px;  
+}
+
+/*make thead header height 72 pixels*/
+#middle{
+    margin-top: 90px;
+}
+
+#footer{
+    margin-top: 90px;
+}
+
+#boards{
+    margin: 0 auto;
+    width: 800px;
+    height: 385px;
+    background-color: gray;
+}
+
+#popular{
+    margin: 0 auto;
+    width: 800px;
+    background-color: #7289DA;
+}
+
+#row1{
+    position: absolute;
+    margin-left: 0px;
+}
+
+#row2{
+    position: absolute;
+    margin-left: 100px;
+}
+#row3{
+    position: absolute;
+    margin-left: 200px;
+}
+
+#row4{
+    position: absolute;
+    margin-left: 300px;
+}
+
+#row5{
+    position: absolute;
+    margin-left: 400px;
+}
+
+#row6{
+    position: absolute;
+    margin-left: 500px;
+}
+
+#row7{
+    position: absolute;
+    margin-left: 600px;
+}
+
+#row8{
+    position: absolute;
+    margin-left: 700px;
+}
+
+.tab{
+    width: 100px;
+    height: 35px;
+    background-color: #7289DA;
+}
