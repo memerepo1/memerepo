@@ -13,7 +13,7 @@
 #header{
     background-color: #7289DA;
     width: 100%;
-    height: 72px;  
+    height: 72px;
 }
 
 /*make thead header height 72 pixels*/
@@ -77,8 +77,42 @@
     margin-left: 700px;
 }
 
+#buttons{
+    position: absolute;
+    padding: 0;
+    width: 1060px;
+    margin: 0 auto;
+    text-align: right;
+}
+
 .tab{
     width: 100px;
     height: 35px;
     background-color: #7289DA;
+}
+
+#headerText{
+    margin: 0 0 0 0;
+}
+
+.btn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  background: #3498db;
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
 }
