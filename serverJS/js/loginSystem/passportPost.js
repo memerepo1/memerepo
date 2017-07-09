@@ -29,6 +29,8 @@ lsystem.use(session({
     saveUninitialized: true,
     maxAge: null
 }));
+
+
 // Init passport authentication 
 lsystem.use(passport.initialize());
 // persistent login sessions 

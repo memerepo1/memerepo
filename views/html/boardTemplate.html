@@ -2,8 +2,48 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/boardCSS.css" />
+	<script src="/socket.io/socket.io.js"></script>
+    <!-- export this script later -->
+    <script>
+    	var socket = io.connect();
+    	console.log('hello')
+    	var url = <%- JSON.stringify(url) %>;
+    	var key = <%- JSON.stringify(key) %>;
+    	var username = <%- JSON.stringify(user) %>;
+        socket.on('socketid', function (data) {
+            document.getElementById('message1').value = data;
+        });
+        function sendMessage() {
+        	var messageData =  document.getElementById('messageText').value;
+        	socket.emit('message', { tryKey : key, message : messageData, user : username, url : url });
+        }
+        socket.on('hi', function (data) {
+        	console.log(data);
+        	console.log('hello');
+        });
+        socket.on('allUsersMessage', function(data) {
+        	console.log(data.message + ' ' + data.user);
+        })
+    </script>
 </head>
 <body>
+	<p></p>
+	<div id='message1'></div>
 	<p>This is the board template!</p>
+	<div class='chat'>
+		<input type="text" class='chat-name' placeholder='enter your name'>
+		<div class='chat-messages'>
+			<div class='chat-message'>
+				Alex: hello there
+			</div>
+			<div class='chat-message'>
+				Billy: hello
+			</div>
+		</div>
+		<textarea placeholder='Type your message' id='messageText'></textarea>
+		<div class='chat-status'>status: <span>idle</span></div>
+		<button type="button" onclick='sendMessage();'>Click Me!</button>
+	</div>
 </body>
 </html>

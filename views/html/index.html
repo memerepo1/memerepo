@@ -22,6 +22,7 @@
         </div>
         <div id="pageWrapper">
             <div id="middle">
+                <div id='newBoards'></div>
                 <a href="/board">
                     <button>create a board</button>
                 </a>
@@ -164,7 +165,9 @@
         <script type="text/javascript">
             // ask someone how to export JSON.stringify
             var blah = <%- JSON.stringify(user) %>;
+            var newBoards = <%- JSON.stringify(boards) %>;
             document.getElementById('tab1').innerHTML = blah;
+            document.getElementById('newBoards').innerHTML = newBoards.slice(0, 3);
         </script>
     </body>
 </html>
