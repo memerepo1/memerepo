@@ -3,6 +3,13 @@ module.exports = function(io) {
     var database = require(path.resolve('./', './serverJS/js/databaseMongoose/mongooseVar.js'));
     var allClients = [];
     io.on('connection', function(socket) {
+
+
+        socket.on('radio', function(blob) {
+            // can choose to broadcast it to whoever you want
+            socket.broadcast.emit('voice', blob);
+        });
+
         allClients.push(socket.id);
         socket.emit('socketid', socket.id);
         socket.on('disconnect', function() {

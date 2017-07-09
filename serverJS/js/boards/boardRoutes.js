@@ -72,6 +72,12 @@ router.get('/b/:boardName', ensureAuthenticated, function(req, res) {
     }, function(err, board) {
         if (board) {
 
+            res.render(path.resolve('./', './views/html/boardTemplate.html'), {
+                key: req.sessionID,
+                user: req.user.username,
+                url: req.url.substring(3)
+            });
+
             var boardSessionsDetails = database.BoardAuthentication({
                 username: req.user.username,
                 sessionID: req.sessionID
@@ -108,12 +114,6 @@ router.get('/b/:boardName', ensureAuthenticated, function(req, res) {
         if (err) {
             return done(err);
         }
-        res.render(path.resolve('./', './views/html/boardTemplate.html'), {
-                key: req.sessionID,
-                user: req.user.username,
-                url: req.url.substring(3)
-            });
-
     });
 });
 
