@@ -14,6 +14,7 @@
 		    mediaRecorder.onstart = function(e) {
 		        this.chunks = [];
 		    };
+		    //figure out what "this" is refering too
 		    mediaRecorder.ondataavailable = function(e) {
 		        this.chunks.push(e.data);
 		    };
@@ -30,7 +31,7 @@
 		    setInterval(function() {
 		        mediaRecorder.stop()
 		        mediaRecorder.start();
-		    }, 200);
+		    }, 300);
 		});
 
 		// When the client receives a voice message it will play the sound
