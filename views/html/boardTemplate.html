@@ -6,8 +6,6 @@
 	<script src="/socket.io/socket.io.js"></script>
     <!-- export this script later -->
     <script>
-    	var socket = io.connect();
-
     	var constraints = { audio: true };
 		navigator.mediaDevices.getUserMedia(constraints).then(function(mediaStream) {
 		    var mediaRecorder = new MediaRecorder(mediaStream);
@@ -31,7 +29,7 @@
 		    setInterval(function() {
 		        mediaRecorder.stop()
 		        mediaRecorder.start();
-		    }, 1500);
+		    }, 300);
 		});
 
 		// When the client receives a voice message it will play the sound

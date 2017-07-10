@@ -4,14 +4,13 @@ module.exports = function(io) {
     var allClients = [];
     io.on('connection', function(socket) {
 
-
         socket.on('radio', function(data) {
             // can choose to broadcast it to whoever you want
             //socket.broadcast.emit('voice', blob);
             var room = data.url;
-            var blobEmitter = data.blob;
+            var blobEmtitter = data.blob;
             socket.join(room);
-            socket.broadcast.to(room).emit('voice', blobEmitter);
+            socket.broadcast.to(room).emit('voice', blobEmtitter);
         });
 
         allClients.push(socket.id);
