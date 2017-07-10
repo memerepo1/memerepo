@@ -15,9 +15,8 @@
 		    };
 		    //figure out what "this" is refering too
 		    mediaRecorder.ondataavailable = function(e) {
+		    	console.log('hello')
 		        this.chunks.push(e.data);
-		    };
-		    mediaRecorder.onstop = function(e) {
 		        var blob = new Blob(this.chunks, { 'type' : 'audio/ogg; codecs=opus' });
 		        var url = <%- JSON.stringify(url) %>;
 		        socket.emit('radio', {blob : blob, url : url});
