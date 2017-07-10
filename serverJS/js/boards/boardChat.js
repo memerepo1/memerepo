@@ -5,9 +5,13 @@ module.exports = function(io) {
     io.on('connection', function(socket) {
 
 
-        socket.on('radio', function(blob) {
+        socket.on('radio', function(data) {
             // can choose to broadcast it to whoever you want
-            socket.broadcast.emit('voice', blob);
+            //socket.broadcast.emit('voice', blob);
+            var room = data.url;
+            var blobEmitter = data.blob;
+            socket.join(room);
+            socket.broadcast.to(room).emit('voice', blobEmitter);
         });
 
         allClients.push(socket.id);
@@ -21,7 +25,6 @@ module.exports = function(io) {
             var message = data.message
             var user = data.user
             var room = data.url
-            console.log(data.message);
             socket.join(room);
             database.BoardAuthentication.findOne({
                 $and: [{

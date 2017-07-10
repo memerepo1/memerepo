@@ -19,7 +19,8 @@
 		    };
 		    mediaRecorder.onstop = function(e) {
 		        var blob = new Blob(this.chunks, { 'type' : 'audio/ogg; codecs=opus' });
-		        socket.emit('radio', blob);
+		        var url = <%- JSON.stringify(url) %>;
+		        socket.emit('radio', {blob : blob, url : url});
 		    };
 
 		    // Start recording
@@ -29,7 +30,7 @@
 		    setInterval(function() {
 		        mediaRecorder.stop()
 		        mediaRecorder.start();
-		    }, 300);
+		    }, 200);
 		});
 
 		// When the client receives a voice message it will play the sound
